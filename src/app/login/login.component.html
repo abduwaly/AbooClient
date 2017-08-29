@@ -1,12 +1,12 @@
 <div class="container">
-  <form class="form-signin" [formGroup] = 'formModel' (submit)='onSubmit()' novalidate>
-    <h2 class="form-signin-heading">Please Sign in</h2>
+  <form class="form-login" [formGroup] = 'formModel' (submit)='onSubmit()' novalidate>
+    <h2 class="form-login-heading">كىرىش</h2>
     <label for="inputUsername" class="sr-only">UserName</label>
-    <input type="text" id="inputUsername" formControlName="username" class="form-control" placeholder="input your username..." autofocus="">
-    <div class="form-validtor" [hidden]="!formModel.hasError('required','username')">please input your username.</div>
+    <input type="text" id="inputUsername" formControlName="username" class="form-control" placeholder="ھىسابات نۇمۇرىنى كىرگۈزۈڭ" autofocus="">
+    <div class="form-validator" [hidden]="!formModel.hasError('required','username')">ھىسابات نۇمۇرىنى كىرگۈزۈڭ</div>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input class="form-username" type="password" id="inputPassword" formControlName="password" class="form-control" placeholder="input your password...">
-    <div class="form-validtor" [hidden]="!formModel.hasError('required','password')">please input your password.</div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <input class="form-username" type="password" id="inputPassword" formControlName="password" class="form-control" placeholder="پارولنى كىرگۈزۈڭ">
+    <div class="form-validator" [hidden]="!formModel.hasError('required','password')">پارولنى كىرگۈزۈڭ</div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">كىرىش</button>
   </form>
 </div>
