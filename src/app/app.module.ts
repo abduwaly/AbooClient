@@ -8,6 +8,20 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+//路由相关
+// import {RouterModule,Routes} from '@angular/router';
+
+
+//
+// const appRoutes:Routes = [
+//   {path:'',redirectTo:'main-content',pathMatch:'full'},
+//   {path:'main-content',component:MainContentComponent},
+//   {path:'login',loadChildren : () => new Promise(resolve=>{
+//     (require as any).ensure([],(require : any)=>{
+//       resolve(require('./login/login.component').LoginComponent);
+//     })
+//   })}
+// ]
 
 @NgModule({
   declarations: [
@@ -20,7 +34,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // RouterModule.forRoot(appRoutes)  //路由
   ],
   providers: [],
   bootstrap: [AppComponent]

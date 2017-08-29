@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, NgModule} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+
+// import {RouterModule} from '@angular/router';
+// import {CommonModule} from "@angular/common";
+// import {LoginComponent} from './login.component'
+
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -25,3 +33,14 @@ export class LoginComponent implements OnInit {
   }
 
 }
+//
+// @NgModule({
+//   imports:[
+//     CommonModule,
+//     RouterModule.forChild([
+//       {path:'',component:LoginComponent}
+//     ])
+//   ],
+//   declarations:[LoginComponent]
+// })
+
