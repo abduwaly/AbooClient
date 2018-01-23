@@ -1,13 +1,24 @@
-<app-header class="navbar-fixed-top"></app-header>
+<!--<app-header class="navbar-fixed-top"></app-header>-->
 <!--<a routerLink="/main-content">main</a>-->
 <!--<a routerLink="/login">login</a>-->
 <!--<router-outlet></router-outlet>-->
-<app-login></app-login>
+<h1 class="title">{{title}}</h1>
+
+<h2>{{title}}</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <span *ngIf="hero === selectedHero">&lt;&lt;&lt;</span>
+  </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero" [anotherPrm]="giveIt2detail"
+                 (childEvent) = "getChildEvent($event)"></app-hero-detail>
+<!--<app-login></app-login>-->
 <!--<div>-->
   <!--<app-aside></app-aside>-->
   <!--<app-main-content></app-main-content>-->
 <!--</div>-->
-<app-footer class="navbar-fixed-bottom"></app-footer>
-
-
+<!--<app-footer class="navbar-fixed-bottom"></app-footer>-->
 

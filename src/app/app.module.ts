@@ -6,8 +6,11 @@ import { HeaderComponent } from './header/header.component';
 import { AsideComponent } from './aside/aside.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { LoginComponent } from './login/login.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+
+
 //路由相关
 // import {RouterModule,Routes} from '@angular/router';
 
@@ -30,11 +33,13 @@ import { FooterComponent } from './footer/footer.component';
     AsideComponent,
     MainContentComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     // RouterModule.forRoot(appRoutes)  //路由
   ],
   providers: [],

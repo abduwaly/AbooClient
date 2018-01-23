@@ -1,0 +1,16 @@
+<h3>{{title}}</h3>
+<div *ngIf="hero">
+  <div><label>id: </label>{{hero.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </div>
+</div>
+<div *ngIf="anotherPrm">
+  <span>Another Param is : <strong>{{anotherPrm}}</strong></span><br>
+  <input [(ngModel)]="anotherPrm">
+</div>
+<div>
+  <input (change)="giveIt2Father(this.innerVal)" [(ngModel)]="innerVal">
+</div>
+
