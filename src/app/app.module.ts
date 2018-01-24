@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import {HeroService} from "./service/hero.service";
 
 
 //路由相关
