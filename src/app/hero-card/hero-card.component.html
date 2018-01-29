@@ -1,0 +1,10 @@
+<h3>Card Heroes</h3>
+<div class="grid grid-pad">
+    <div *ngIf="clickedHero" class="module hero">
+      <h4>{{clickedHero.name}}</h4>
+    </div>
+  <button (click)="goToDetail()">View Details</button>
+</div>
+
+<div><a routerLink="/">Back1</a></div>
+<button (click)="onBackClick()">Back2</button>

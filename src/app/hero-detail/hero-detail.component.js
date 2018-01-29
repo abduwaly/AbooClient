@@ -10,7 +10,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
  */
 var core_1 = require('@angular/core');
 var HeroDetailComponent = (function () {
-    function HeroDetailComponent() {
+    function HeroDetailComponent(heroService, route, location, router) {
+        this.heroService = heroService;
+        this.route = route;
+        this.location = location;
+        this.router = router;
         this.title = 'hero details';
         this.innerVal = "I'm inner Value";
         this.childEvent = new core_1.EventEmitter();
@@ -21,6 +25,12 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent.prototype.ngOnChanges = function (changes) {
         console.log(this.hero);
         console.log(changes['hero']);
+    };
+    HeroDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.paramMap
+            .switchMap(function (params) { return _this.heroService.getHero(+params.get('id')); })
+            .subscribe(function (hero) { return _this.hero = hero; });
     };
     __decorate([
         core_1.Input()

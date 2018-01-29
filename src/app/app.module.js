@@ -15,8 +15,11 @@ var login_component_1 = require('./login/login.component');
 var hero_detail_component_1 = require('./hero-detail/hero-detail.component');
 var forms_1 = require('@angular/forms');
 var footer_component_1 = require('./footer/footer.component');
+var hero_service_1 = require("./service/hero.service");
 //路由相关
-// import {RouterModule,Routes} from '@angular/router';
+var router_1 = require('@angular/router');
+var hero_card_component_1 = require("./hero-card/hero-card.component");
+var dashboard_component_1 = require("./dashboard/dashboard.component");
 //
 // const appRoutes:Routes = [
 //   {path:'',redirectTo:'main-content',pathMatch:'full'},
@@ -39,14 +42,36 @@ var AppModule = (function () {
                 main_content_component_1.MainContentComponent,
                 login_component_1.LoginComponent,
                 footer_component_1.FooterComponent,
-                hero_detail_component_1.HeroDetailComponent
+                hero_detail_component_1.HeroDetailComponent,
+                hero_card_component_1.HeroCardComponent,
+                dashboard_component_1.DashboardComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.ReactiveFormsModule,
                 forms_1.FormsModule,
+                // RouterModule.forRoot(appRoutes)  //路由
+                router_1.RouterModule.forRoot([
+                    {
+                        path: 'hero-card/:id',
+                        component: hero_card_component_1.HeroCardComponent
+                    },
+                    {
+                        path: 'detail/:id',
+                        component: hero_detail_component_1.HeroDetailComponent
+                    },
+                    {
+                        path: 'dashboard',
+                        component: dashboard_component_1.DashboardComponent
+                    },
+                    {
+                        path: '',
+                        redirectTo: '/dashboard',
+                        pathMatch: 'full'
+                    }
+                ])
             ],
-            providers: [],
+            providers: [hero_service_1.HeroService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

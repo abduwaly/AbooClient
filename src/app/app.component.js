@@ -19,6 +19,9 @@ var AppComponent = (function () {
     AppComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
+    AppComponent.prototype.onGoClick = function (hero) {
+        this.hero4Card = hero;
+    };
     AppComponent.prototype.getChildEvent = function (index) {
         console.log(index);
         // this.data.splice(index,1);
@@ -28,8 +31,8 @@ var AppComponent = (function () {
     // }
     AppComponent.prototype.getHeroes = function () {
         var _this = this;
-        //this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-        this.heroService.getHeroesSlowly().then(function (heroes) { return _this.heroes = heroes; });
+        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+        // this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
     };
     AppComponent = __decorate([
         core_1.Component({

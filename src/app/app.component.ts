@@ -19,11 +19,16 @@ export class AppComponent implements OnInit{
   heroes : Hero[];
   selectedHero : Hero;
   giveIt2detail = "This is prm from father to child module!";
+  hero4Card : Hero;
 
   constructor(private heroService: HeroService) { }
 
   onSelect(hero : Hero) : void{
     this.selectedHero = hero;
+  }
+
+  onGoClick(hero : Hero) : void{
+    this.hero4Card = hero;
   }
 
   getChildEvent(index){
@@ -36,8 +41,8 @@ export class AppComponent implements OnInit{
   // }
 
   getHeroes(): void {
-    //this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    // this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
 
 

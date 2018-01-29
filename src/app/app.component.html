@@ -1,7 +1,9 @@
 <!--<app-header class="navbar-fixed-top"></app-header>-->
 <!--<a routerLink="/main-content">main</a>-->
 <!--<a routerLink="/login">login</a>-->
-<!--<router-outlet></router-outlet>-->
+
+<router-outlet></router-outlet>
+
 <h1 class="title">{{title}}</h1>
 
 <h2>{{title}}</h2>
@@ -10,6 +12,9 @@
       [class.selected]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
     <span *ngIf="hero === selectedHero">&lt;&lt;&lt;</span>
+  </li>
+  <li *ngFor="let hero of heroes" [routerLink]="['/hero-card', hero.id]" >
+    <span class="badge">{{hero.id}}</span>GO!!!
   </li>
 </ul>
 

@@ -13,7 +13,10 @@ import {HeroService} from "./service/hero.service";
 
 
 //路由相关
-// import {RouterModule,Routes} from '@angular/router';
+import {RouterModule,Routes} from '@angular/router';
+import {HeroCardComponent} from "./hero-card/hero-card.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+
 
 
 //
@@ -35,15 +38,37 @@ import {HeroService} from "./service/hero.service";
     MainContentComponent,
     LoginComponent,
     FooterComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HeroCardComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     // RouterModule.forRoot(appRoutes)  //路由
+    RouterModule.forRoot([
+      {
+        path: 'hero-card/:id',
+        component: HeroCardComponent
+      },
+      {
+        path:'detail/:id',
+        component : HeroDetailComponent
+      },
+      {
+        path : 'dashboard',
+        component : DashboardComponent
+      },
+      {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      }
+    ])
+
   ],
-  providers: [],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
