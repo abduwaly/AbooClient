@@ -16,10 +16,12 @@ var hero_detail_component_1 = require('./hero-detail/hero-detail.component');
 var forms_1 = require('@angular/forms');
 var footer_component_1 = require('./footer/footer.component');
 var hero_service_1 = require("./service/hero.service");
+var http_1 = require('@angular/http');
 //路由相关
 var router_1 = require('@angular/router');
 var hero_card_component_1 = require("./hero-card/hero-card.component");
 var dashboard_component_1 = require("./dashboard/dashboard.component");
+var locate_service_service_1 = require("./service/locate-service.service");
 //
 // const appRoutes:Routes = [
 //   {path:'',redirectTo:'main-content',pathMatch:'full'},
@@ -69,9 +71,11 @@ var AppModule = (function () {
                         redirectTo: '/dashboard',
                         pathMatch: 'full'
                     }
-                ])
+                ]),
+                //HTTP服务
+                http_1.HttpModule
             ],
-            providers: [hero_service_1.HeroService],
+            providers: [hero_service_1.HeroService, locate_service_service_1.LocateService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

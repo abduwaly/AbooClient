@@ -10,12 +10,13 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import {HeroService} from "./service/hero.service";
-
+import {HttpModule} from '@angular/http';
 
 //路由相关
 import {RouterModule,Routes} from '@angular/router';
 import {HeroCardComponent} from "./hero-card/hero-card.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {LocateService} from "./service/locate-service.service";
 
 
 
@@ -65,10 +66,12 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
         redirectTo: '/dashboard',
         pathMatch: 'full'
       }
-    ])
+    ]),
+    //HTTP服务
+    HttpModule
 
   ],
-  providers: [HeroService],
+  providers: [HeroService,LocateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
