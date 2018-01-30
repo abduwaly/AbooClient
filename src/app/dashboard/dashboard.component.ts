@@ -16,12 +16,16 @@ export class DashboardComponent{
   constructor(
     private heroService : HeroService,
     private locateService : LocateService
-  ){}
-
-  getMyLoc() : void{
-    // this.heroService.getHeroes().then(heroes => console.log("@@@@####****",heroes));
-    this.locateService.getLocation().then(res => console.log("@@@@####****",res));
-
+  ){
+    this.locateService.getLocation().then(res => this.locInfo = res);
   }
+
+  locInfo : any;
+
+  // getMyLoc() : void{
+  //   // this.heroService.getHeroes().then(heroes => console.log("@@@@####****",heroes));
+  //   this.locateService.getLocation().then(res => this.locInfo = res);
+  //
+  // }
 
 }

@@ -13,12 +13,13 @@ require('rxjs/add/operator/toPromise');
 var LocateService = (function () {
     function LocateService(http) {
         this.http = http;
-        this.blogUrl = 'blog/list';
+        // private blogUrl = 'blog/list';
+        this.locUrl = 'json/'; //'json/8.8.8.8'
     }
     LocateService.prototype.getLocation = function () {
-        return this.http.get(this.blogUrl)
+        return this.http.get(this.locUrl)
             .toPromise()
-            .then(function (response) { return console.log("??????????????", response); })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     LocateService.prototype.handleError = function (error) {

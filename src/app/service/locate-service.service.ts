@@ -12,12 +12,13 @@ export class LocateService{
 
   constructor(private http: Http) { }
 
-  private blogUrl = 'blog/list';
+  // private blogUrl = 'blog/list';
+  private locUrl = 'json/'; //'json/8.8.8.8'
 
   getLocation() : Promise<any>{
-    return this.http.get(this.blogUrl)
+    return this.http.get(this.locUrl)
       .toPromise()
-      .then(response => console.log("??????????????",response))
+      .then(response => response.json())
       .catch(this.handleError);
   }
 

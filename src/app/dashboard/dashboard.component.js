@@ -11,13 +11,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var DashboardComponent = (function () {
     function DashboardComponent(heroService, locateService) {
+        var _this = this;
         this.heroService = heroService;
         this.locateService = locateService;
+        this.locateService.getLocation().then(function (res) { return _this.locInfo = res; });
     }
-    DashboardComponent.prototype.getMyLoc = function () {
-        // this.heroService.getHeroes().then(heroes => console.log("@@@@####****",heroes));
-        this.locateService.getLocation().then(function (res) { return console.log("@@@@####****", res); });
-    };
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'app-dashboard',

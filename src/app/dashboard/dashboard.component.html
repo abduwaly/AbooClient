@@ -1,2 +1,8 @@
 <div>Dashboard ------------------</div>
-<button (click)="getMyLoc()">get my location info</button>
+<h4>My Location Info</h4>
+<div *ngIf="locInfo" style="color:red;">
+  {{locInfo.ip}},
+  {{locInfo.country_name}},
+  {{locInfo.region_name}},
+  {{locInfo.city}}
+</div>
